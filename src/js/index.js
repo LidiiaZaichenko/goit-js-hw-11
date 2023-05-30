@@ -16,7 +16,7 @@ function onSubmit(e) {
   gallery.innerHTML = '';
   imageApiService.query = e.currentTarget.elements.searchQuery.value.trim();
   imageApiService.resetPage();
-  if (imageApiService.query === '') {
+  if (!imageApiService.query) {
     Notify.info('Please enter your search query!');
     return;
   } else {
